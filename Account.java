@@ -49,7 +49,10 @@ public abstract class Account {
 	}
 
 	public boolean debitAccount(double amount) {
-		this.balance=this.balance-amount;
+		if(this.balance<=0 || this.balance<amount)
+			return false;
+		
+		else this.balance=this.balance-amount;
         return true;
 	}
 }
